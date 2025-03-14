@@ -1,4 +1,3 @@
-import { Flex, Text } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -34,24 +33,22 @@ function Carousel() {
     >
       {slides.map((slide, index) => (
         <SwiperSlide key={index}>
-          <Flex
-            as="section"
-            w="100svw"
-            h="100svh"
-            justifyContent="center"
-            alignItems="center"
-            bg={`url(${slide.image})`}
-            backgroundSize="cover"
+          <section
+            className="w-[100svw] h-[100svh] flex justify-center items-center"
+            style={{
+              backgroundImage: `url(${slide.image})`,
+              backgroundSize: "cover",
+            }}
           >
-            <Text
-              color="secondary"
-              opacity={0.85}
-              fontWeight="bold"
-              fontSize={(getViewPortWidth() / slide.text.length) * 1.3}
+            <p
+              className="text-secondary opacity-85 font-bold"
+              style={{
+                fontSize: `${(getViewPortWidth() / slide.text.length) * 1.3}px`,
+              }}
             >
               {slide.text}
-            </Text>
-          </Flex>
+            </p>
+          </section>
         </SwiperSlide>
       ))}
     </Swiper>
