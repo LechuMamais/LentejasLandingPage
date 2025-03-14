@@ -1,12 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Kalnia:wght@100..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kalnia:wght@100..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+  --color-primary: #000000;
+  --color-secondary: #FFFFFF;
+  --color-bgCustom: #FFFDFD;
+  --color-bgCustomGreen: #F1F0EC;
+  --color-bgFooter: #000000;
+  --color-bgButton: #D9D9D9;
+  --color-bgButton_hover: #A9A9A9;
+  --color-bgHeader: rgba(0, 0, 0, 0.3);
+  --color-yellowStar: #FBBC05;
+
+  --font-Kalnia: 'Kalnia', 'Rubik', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
 
 :root {
-  font-family: 'kalnia', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: var('primary');
   background-color: #242424;
 
   font-synthesis: none;
@@ -16,17 +30,13 @@
 }
 
 body {
-  margin: 0;
   min-width: 320px;
   min-height: 100vh;
 }
 
 * {
+  @apply font-Kalnia;
   box-sizing: border-box;
   text-decoration: none;
   margin: 0;
 }
-
-/*.arrowContainer svg {
-  transform: scale(8) !important;
-}*/

@@ -13,7 +13,13 @@ function App() {
     <>
       <Header></Header>
 
-      <Box as="main" flex="1" bgColor={"bgCustom"} w="100vw">
+      <Box
+        as="main"
+        flex="1"
+        bgColor={"bgCustom"}
+        w="100vw"
+        className="text-primary"
+      >
         <Carousel />
         <Section1 />
         <ProductsSection />
