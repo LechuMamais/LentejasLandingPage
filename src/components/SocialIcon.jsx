@@ -1,27 +1,7 @@
-import { Box, Link } from "@chakra-ui/react";
-
 const SocialIcon = ({ icon, href, alt }) => (
-  <Link href={href} isExternal>
-    <Box
-      as="img"
-      src={icon}
-      alt={alt}
-      boxSize="32px"
-      filter="brightness(0) invert(1)"
-    />
-  </Link>
+  <a href={href} target="_blank" rel="noopener noreferrer">
+    <img src={icon} alt={alt} className="w-8 h-8 filter brightness-0 invert" />
+  </a>
 );
+
 export default SocialIcon;
-
-/*
-
-npm install prop-types
-
-// Define las propTypes
-SocialIcon.propTypes = {
-  icon: PropTypes.string.isRequired, // 'icon' debe ser una cadena y es obligatoria
-  href: PropTypes.string.isRequired, // 'href' debe ser una cadena y es obligatoria
-  alt: PropTypes.string.isRequired,  // 'alt' debe ser una cadena y es obligatoria
-};
-
-*/
