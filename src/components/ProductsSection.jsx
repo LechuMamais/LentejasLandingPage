@@ -1,46 +1,27 @@
-import { Box, Flex, HStack, Text } from "@chakra-ui/react";
 import products from "../data/products";
 import ProductCard from "./ProductCard";
 import { BsArrowRight } from "react-icons/bs";
 
 function ProductsSection() {
   return (
-    <Flex
-      as="section"
+    <section
       id="products"
-      direction={"column"}
-      justifyContent={"space-evenly"}
-      width={"100svw"}
-      height={"100svh"}
-      bg={"bgCustomGreen"}
-      px={120}
+      className="flex flex-col justify-evenly w-[100svw] h-[100svh] bg-bgCustomGreen px-[120px]"
     >
-      <Text color={"primary"} fontSize={"48px"}>
-        Nuestros Productos
-      </Text>
-      <HStack gap={48}>
+      <h2 className="text-primary text-[48px]">Nuestros Productos</h2>
+
+      <div className="flex gap-[48px]">
         {products.map((product, index) => (
           <ProductCard key={index} product={product} />
         ))}
-      </HStack>
-      <Flex flexDirection={"row-reverse"}>
-        <Box
-          pr={"24px"}
-          transition={"all 0.2s"}
-          _hover={{
-            pr: "0px",
-            "& svg": {
-              fill: "bgButton_hover",
-              transition: "all 0.4s",
-            },
-          }}
-          fontSize={"120px"}
-          cursor={"pointer"}
-        >
-          <BsArrowRight fill={"#D9D9D9"} />
-        </Box>
-      </Flex>
-    </Flex>
+      </div>
+
+      <div className="flex flex-row-reverse">
+        <div className="pr-[24px] text-[120px] cursor-pointer transition-all duration-200 hover:pr-0">
+          <BsArrowRight className="fill-[#D9D9D9] transition-all duration-400 hover:fill-bgButton_hover" />
+        </div>
+      </div>
+    </section>
   );
 }
 
