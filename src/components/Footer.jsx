@@ -1,4 +1,3 @@
-import { Box, Stack, Text, HStack, VStack, Link, Flex } from "@chakra-ui/react";
 import SocialIcon from "./SocialIcon";
 import InstagramIcon from "/icons/instagram.svg";
 import FacebookIcon from "/icons/facebook.svg";
@@ -6,18 +5,18 @@ import TwitterIcon from "/icons/twitter.svg";
 
 function Footer() {
   return (
-    <Box as="footer" bg="bgFooter" p={32} width="100%" height="400px">
-      <Flex justify="space-around" align="center" h="100%" w="100%">
-        <Stack spacing={1}>
-          <Text color="secondary">Lentejas Premium © 2018.</Text>
-          <Text color="secondary">Marca registrada</Text>
-        </Stack>
+    <footer className="bg-bgFooter p-32 w-full h-[400px]">
+      <div className="flex justify-around items-center h-full w-full">
+        <div className="flex flex-col space-y-1">
+          <p className="text-secondary">Lentejas Premium © 2018.</p>
+          <p className="text-secondary">Marca registrada</p>
+        </div>
 
-        <VStack gap={16}>
-          <Text color="secondary" fontSize="20px">
+        <div className="flex flex-col gap-8">
+          <p className="text-secondary text-[20px] text-center">
             ONLINE COMMUNITY
-          </Text>
-          <HStack gap={32}>
+          </p>
+          <div className="flex gap-16">
             <SocialIcon
               icon={InstagramIcon}
               href="https://instagram.com"
@@ -36,16 +35,14 @@ function Footer() {
               alt="Twitter"
               color="secondary"
             />
-          </HStack>
-        </VStack>
+          </div>
+        </div>
 
-        <Link href="/#">
-          <Text color="secondary" fontSize="20px">
-            Web Design
-          </Text>
-        </Link>
-      </Flex>
-    </Box>
+        <a href="/#">
+          <p className="text-secondary text-[20px]">Web Design</p>
+        </a>
+      </div>
+    </footer>
   );
 }
 
