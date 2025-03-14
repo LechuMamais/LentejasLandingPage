@@ -13,20 +13,14 @@ function App() {
     <>
       <Header></Header>
 
-      <Box
-        as="main"
-        flex="1"
-        bgColor={"bgCustom"}
-        w="100vw"
-        className="text-primary"
-      >
+      <main className="text-primary w-[100svw] bg-bgCustom flex-[1]">
         <Carousel />
         <Section1 />
         <ProductsSection />
         <About />
         <ParallaxImage />
         <Opinions />
-      </Box>
+      </main>
 
       <Footer></Footer>
     </>
