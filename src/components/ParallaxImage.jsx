@@ -1,15 +1,6 @@
-import { Box } from "@chakra-ui/react";
-
 function ParallaxImage() {
   return (
-    <Box
-      w="100svw"
-      h="240px"
-      backgroundImage="url(/images/ParallaxImage.jpg)"
-      backgroundSize="cover"
-      backgroundPosition="center"
-      backgroundAttachment="fixed"
-    />
+    <div className="w-[100svw] h-[240px] bg-[url(/images/ParallaxImage.jpg)] bg-cover bg-center bg-fixed" />
   );
 }
 

@@ -1,42 +1,22 @@
-import { Box, Image, Text, Stack } from "@chakra-ui/react";
-
 function ProductCard({ product }) {
   return (
-    <Box
-      maxW="300px"
-      borderWidth="1px"
-      borderRadius={"16px"}
-      overflow="hidden"
-      boxShadow="md"
-      bg="bgCustom"
-      transition="transform 0.1s, box-shadow 0.1s"
-      _hover={{
-        boxShadow: "lg",
-      }}
-    >
-      <Image
+    <div className="max-w-[300px] border border-gray-200 rounded-[16px] overflow-hidden shadow-md bg-bgCustom transition-transform duration-100 ease-in-out hover:shadow-lg hover:transform hover:scale-105">
+      <img
         src={product.image.url}
         alt={product.image.alt}
-        objectFit="cover"
-        w="100%"
-        h="300px"
+        className="object-cover w-full h-[300px]"
       />
 
-      <Stack p={4} spacing={2}>
-        <Text
-          fontSize="xl"
-          fontWeight="semibold"
-          textAlign="center"
-          color="primary"
-        >
+      <div className="p-4 space-y-2">
+        <h3 className="text-xl font-semibold text-center text-primary">
           {product.title}
-        </Text>
+        </h3>
 
-        <Text fontSize="sm" color="primary" textAlign="center">
+        <p className="text-sm text-center text-primary">
           {product.description}
-        </Text>
-      </Stack>
-    </Box>
+        </p>
+      </div>
+    </div>
   );
 }
 
