@@ -28,23 +28,28 @@ function About() {
       <div className="p-[48px] flex flex-col justify-center gap-8 bg-bgCustomGreen">
         <p className="text-[20px] font-bold">SOMOS</p>
         <p className="text-[102px] font-bold">CALIDAD</p>
-        <p className="text-[18px]">Nos obsesionan los detalles.</p>
-        <p className="text-[18px]">
-          Por eso nos aseguramos que cada grano, cada semilla, cumpla con
-          estrictos controles de calidad, para que todas tus comidas estén al
-          nivel que te mereces.
-        </p>
+        <div className="text-[18px]">
+          <p>Nos obsesionan los detalles.</p>
+          <p>
+            Por eso nos aseguramos que cada grano, cada semilla, cumpla con
+            estrictos controles de calidad, para que todas tus comidas estén al
+            nivel que te mereces.
+          </p>
+        </div>
       </div>
       <div className="col-span-2 p-[200px] flex flex-col justify-center gap-8">
         <p className="text-[102px] font-bold">SOMOS</p>
-        <p className="text-[18px]">
-          Una empresa familiar fundada en 2018 con el objetivo de llevar lo
-          mejor del campo a tu mesa.
-        </p>
-        <p className="text-[18px]">
-          Producir y comercializar productos de primera calidad es nuestro ADN.
-        </p>
-        <p className="text-[18px]">Nutrirte nuestro fin</p>
+        <div className="text-[18px]">
+          <p>
+            Una empresa familiar fundada en 2018 con el objetivo de llevar lo
+            mejor del campo a tu mesa.
+          </p>
+          <p>
+            Producir y comercializar productos de primera calidad es nuestro
+            ADN.
+          </p>
+          <p>Nutrirte nuestro fin</p>{" "}
+        </div>
       </div>
     </section>
   );
