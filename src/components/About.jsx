@@ -2,8 +2,10 @@ function About() {
   return (
     <section id="about" className="grid grid-rows-3 grid-cols-2 h-[2250px]">
       <div className="p-[48px] flex flex-col justify-center gap-8 bg-bgCustomGreen">
-        <p className="text-[20px] font-bold">SOMOS</p>
-        <p className="text-[102px] font-bold">SOSTENIBLES</p>
+        <div className="font-bold">
+          <p className="text-[20px]">SOMOS</p>
+          <p className="text-[102px] leading-none">SOSTENIBLES</p>
+        </div>
         <p className="text-[18px]">
           Trabajamos directamente con agricultores locales, que utilizan métodos
           respetuosos con el medio ambiente, para ofrecer productos naturales de
@@ -26,8 +28,10 @@ function About() {
         />
       </div>
       <div className="p-[48px] flex flex-col justify-center gap-8 bg-bgCustomGreen">
-        <p className="text-[20px] font-bold">SOMOS</p>
-        <p className="text-[102px] font-bold">CALIDAD</p>
+        <div className="font-bold">
+          <p className="text-[20px]">SOMOS</p>
+          <p className="text-[102px] leading-none">CALIDAD</p>
+        </div>
         <div className="text-[18px]">
           <p>Nos obsesionan los detalles.</p>
           <p>
