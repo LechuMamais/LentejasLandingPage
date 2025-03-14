@@ -1,61 +1,32 @@
-import { Flex, Icon, Image, Stack, Text, VStack } from "@chakra-ui/react";
 import { FaStar } from "react-icons/fa6";
-console.log(FaStar);
 
 function OpinionCard({ opinion }) {
   return (
-    <Flex
-      direction="column"
-      bg="bgCustomGreen"
-      p={"48px"}
-      borderRadius={"16px"}
-      border={"2px solid primary"}
-      boxShadow={"0px 0px 24px 0px rgba(0,0,0,0.5)"}
-      w={"320px"}
-      h={"480px"}
-      textAlign="center"
-      alignItems={"center"}
-    >
-      <VStack gap={"16px"}>
-        <Image
-          borderRadius={"100%"}
-          w={"120px"}
-          h={"120px"}
+    <div className="flex flex-col bg-bgCustomGreen p-[48px] rounded-[16px] border-none shadow-[0px_0px_24px_0px_rgba(0,0,0,0.5)] w-[320px] h-[480px] text-center items-center">
+      <div className="flex flex-col gap-[16px]">
+        <img
+          className="rounded-full w-[120px] h-[120px] object-cover shadow-[0px_0px_12px_0px_rgba(0,0,0,0.5)]"
           src={opinion.image.url}
           alt={opinion.image.alt}
-          boxShadow={"0px 0px 12px 0px rgba(0,0,0,0.5)"}
         />
-        <Text as="h3" color="primary">
-          {opinion.name}
-        </Text>
-        <Stack
-          direction="row"
-          justify="center"
-          transform="scale(3)"
-          gap={"2px"}
-        >
+        <h3 className="text-primary">{opinion.name}</h3>
+        <div className="flex justify-center scale-[3] gap-[2px]">
           {Array(5)
             .fill("")
             .map((_, i) => (
-              <Icon
+              <FaStar
                 key={i}
-                as={FaStar}
-                color={i < opinion.rating ? "yellowStar" : "gray"}
-                boxSize={5}
+                className={`w-1.5 h-1.5 ${
+                  i < opinion.rating ? "text-yellowStar" : "text-gray"
+                }`}
               />
             ))}
-        </Stack>
-      </VStack>
-      <Text
-        color="primary"
-        noOfLines={5}
-        w={"200px"}
-        mt={"32px"}
-        fontSize={"18px"}
-      >
+        </div>
+      </div>
+      <p className="text-primary line-clamp-5 w-[200px] pt-[32px] text-[18px]">
         {opinion.comment}
-      </Text>
-    </Flex>
+      </p>
+    </div>
   );
 }
 
