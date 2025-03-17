@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Carousel from "./components/Carousel";
-import Section1 from "./components/Section1";
+import Hero from "./components/Hero";
 import ProductsSection from "./components/ProductsSection";
 import About from "./components/About";
 import Opinions from "./components/Opinions";
@@ -14,7 +14,7 @@ function App() {
 
       <main className="text-primary w-[100svw] bg-bgCustom flex-[1] font-Kalnia">
         <Carousel />
-        <Section1 />
+        <Hero />
         <ProductsSection />
         <About />
         <ParallaxImage />

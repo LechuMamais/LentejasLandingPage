@@ -1,10 +1,12 @@
 import { handleScroll } from "../utils/handleScroll";
 
-function Section1() {
+function Hero() {
   return (
-    <section className="flex flex-col justify-center items-center gap-8 w-[100svw] h-[100svh] bg-[url('/images/citric_bg.jpg')] bg-repeat-x bg-bottom">
-      <h1 className="text-[120px] text-primary font-semibold">EAT HEALTHY</h1>
-      <p className="text-[36px] text-center text-primary max-w-[1000px]">
+    <section className="flex flex-col justify-center items-center gap-8 w-[100svw] h-[100svh] px-8 bg-[url('/images/citric_bg.jpg')] bg-repeat-x bg-bottom">
+      <h1 className=" text-primary font-semibold text-center  text-[48px] md:text-[96px]">
+        EAT HEALTHY
+      </h1>
+      <p className=" text-center text-primary max-w-[1000px] text-[18px] md:text-[36px]">
         Descubre el sabor y la calidad de las mejores legumbres
       </p>
       <button
@@ -17,4 +19,4 @@ function Section1() {
   );
 }
 
-export default Section1;
+export default Hero;
