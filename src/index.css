@@ -1,6 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kalnia:wght@100..700&display=swap');
 @import "tailwindcss";
 
+/*
+@font-face {
+  font-family: 'Kalnia';
+  src: url('/src/assets/fonts/Kalnia-VariableFont_wdth\,wght.ttf') format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/src/assets/fonts/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/src/assets/fonts/Inter-Italic-VariableFont_opsz\,wght.ttf') format('truetype');
+  font-style: italic;
+}
+*/
 
 @theme {
   --color-primary: #000000;
@@ -13,6 +32,8 @@
   --color-bgHeader: rgba(0, 0, 0, 0.3);
   --color-yellowStar: #FBBC05;
 
+  --color-bgDropDownMenu: rgba(0, 0, 0, 0.7);
+
   --font-Kalnia: 'Kalnia', 'Rubik', system-ui, Avenir, Helvetica, Arial, sans-serif;
   --font-Inter: 'Inter';
 }
@@ -22,7 +43,6 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -35,7 +55,8 @@ body {
 }
 
 * {
-  /*@apply font-Kalnia; Con esto se aplica a todo y ya no se puede sobreescribir*/
+  /*@apply font-Kalnia; Con esto se aplica a todo y ya no se puede sobreescribir
+  overflow: hidden;*/
   box-sizing: border-box;
   text-decoration: none;
   margin: 0;
