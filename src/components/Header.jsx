@@ -1,9 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { handleScroll } from "../utils/handleScroll";
 import { IoMenu, IoClose } from "react-icons/io5";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("max-h-screen");
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("max-h-screen");
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    // Cleanup cuando el componente se desmonta
+    return () => document.body.classList.remove("overflow-hidden");
+  }, [isOpen]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -19,17 +32,20 @@ function Header() {
     <header className="bg-bgHeader py-2 px-4 w-[100svw] h-[60px] fixed top-0 left-0 right-0 z-10 backdrop-blur-md font-Kalnia">
       <div className="flex justify-between items-center h-full w-full">
         <img
-          className="rounded-full w-8 cursor-pointer"
+          className="rounded-full w-8 cursor-pointer z-20"
           src="/images/branding/logo_64_b&w_round.png"
           alt="logo"
-          onClick={() => handleScroll(sections[0]._id)}
+          onClick={() => {
+            handleScroll(sections[0]._id);
+            setIsOpen(false);
+          }}
         />
 
         {/* NAV DESKTOP */}
-        <div className="gap-16 hidden md:flex">
+        <div className="gap-16 hidden md:flex opacity- text-[14px] tracking-wider">
           {sections.map((section) => (
             <span
-              key={section}
+              key={section._id}
               className="cursor-pointer"
               onClick={() => handleScroll(section._id)}
             >
@@ -41,7 +57,7 @@ function Header() {
         {/* BOTÓN MENÚ MOBILE */}
         <button
           onClick={toggleMenu}
-          className="scale-200 z-20 pr-2 opacity-80 bg-transparent border-none cursor-pointer md:hidden"
+          className="scale-200 z-20 pr-2 opacity-80 bg-transparent border-none cursor-pointer md:text-transparent md:cursor-auto"
         >
           {isOpen ? <IoClose /> : <IoMenu />}
         </button>
@@ -56,10 +72,10 @@ function Header() {
         {sections.map((section) => (
           <span
             key={section._id}
-            className="cursor-pointer text-2xl"
+            className="cursor-pointer text-2xl tracking-wider"
             onClick={() => {
               handleScroll(section._id);
-              setIsOpen(false); // Cerrar menú al hacer clic
+              setIsOpen(false);
             }}
           >
             {section.headerText}

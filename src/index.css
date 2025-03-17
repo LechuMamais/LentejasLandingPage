@@ -55,8 +55,8 @@ body {
 }
 
 * {
-  /*@apply font-Kalnia; Con esto se aplica a todo y ya no se puede sobreescribir
-  overflow: hidden;*/
+  /*@apply font-Kalnia; Con esto se aplica a todo y ya no se puede sobreescribir*/
+  /*overflow: hidden;*/
   box-sizing: border-box;
   text-decoration: none;
   margin: 0;
