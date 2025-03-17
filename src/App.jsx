@@ -12,7 +12,7 @@ function App() {
     <>
       <Header></Header>
 
-      <main className="text-primary w-[100svw] bg-bgCustom flex-[1]">
+      <main className="text-primary w-[100svw] bg-bgCustom flex-[1] font-Kalnia">
         <Carousel />
         <Section1 />
         <ProductsSection />
