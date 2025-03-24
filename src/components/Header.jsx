@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { handleScroll } from "../utils/handleScroll";
 import { IoMenu, IoClose } from "react-icons/io5";
+import { headerSections } from "../data/headerSections";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,25 +9,16 @@ function Header() {
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add("max-h-screen");
-      document.body.classList.add("overflow-hidden");
     } else {
       document.body.classList.remove("max-h-screen");
-      document.body.classList.remove("overflow-hidden");
     }
 
-    // Cleanup cuando el componente se desmonta
     return () => document.body.classList.remove("overflow-hidden");
   }, [isOpen]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-  const sections = [
-    { _id: "home", headerText: "Inicio" },
-    { _id: "products", headerText: "Productos" },
-    { _id: "about", headerText: "Nosotros" },
-    { _id: "opinions", headerText: "Opiniones" },
-  ];
 
   return (
     <header className="bg-bgHeader py-2 px-4 w-[100svw] h-[60px] fixed top-0 left-0 right-0 z-10 backdrop-blur-md font-Kalnia">
@@ -36,14 +28,13 @@ function Header() {
           src="/images/branding/logo_64_b&w_round.png"
           alt="logo"
           onClick={() => {
-            handleScroll(sections[0]._id);
+            handleScroll(headerSections[0]._id);
             setIsOpen(false);
           }}
         />
 
-        {/* NAV DESKTOP */}
-        <div className="gap-16 hidden md:flex opacity- text-[14px] tracking-wider">
-          {sections.map((section) => (
+        <div className="gap-16 xl:gap-24 2xl:gap-32 hidden md:flex opacity- text-[14px] xl:text-[16px] 2xl:text-[18px] tracking-wider">
+          {headerSections.map((section) => (
             <span
               key={section._id}
               className="cursor-pointer"
@@ -54,7 +45,6 @@ function Header() {
           ))}
         </div>
 
-        {/* BOTÓN MENÚ MOBILE */}
         <button
           onClick={toggleMenu}
           className="scale-200 z-20 pr-2 opacity-80 bg-transparent border-none cursor-pointer md:text-transparent md:cursor-auto"
@@ -63,13 +53,12 @@ function Header() {
         </button>
       </div>
 
-      {/* MENÚ DESPLEGABLE MOBILE */}
       <div
         className={`absolute top-0 left-0 w-full h-screen bg-bgDropDownMenu backdrop-blur-xs flex flex-col items-center justify-center gap-6 transition-transform duration-300 ${
           isOpen ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        {sections.map((section) => (
+        {headerSections.map((section) => (
           <span
             key={section._id}
             className="cursor-pointer text-2xl tracking-wider"
