@@ -5,9 +5,9 @@ import TwitterIcon from "/icons/twitter.svg";
 
 function Footer() {
   return (
-    <footer className="bg-bgFooter p-32 w-full h-[400px] font-Kalnia">
-      <div className="flex justify-around items-center h-full w-full">
-        <div className="flex flex-col space-y-1">
+    <footer className="bg-bgFooter py-18 md:py-32 w-full minh-[400px] font-Kalnia">
+      <div className="flex justify-evenly items-center h-full w-full flex-col lg:flex-row gap-24 ">
+        <div className="flex flex-col space-y-1 items-center">
           <p className="text-secondary">Lentejas Premium © 2018.</p>
           <p className="text-secondary">Marca registrada</p>
         </div>
