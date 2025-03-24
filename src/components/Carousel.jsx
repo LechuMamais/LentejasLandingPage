@@ -39,32 +39,23 @@ function Carousel() {
             </p>
 
             <div className="flex flex-col flex-start pl-[0px] w-full h-full justify-center gap-12 lg:hidden leading-none">
-              {slide.text.map(
-                (sil, index) => (
-                  console.log(slide.text.join("")),
-                  (
-                    <p
-                      className="text-secondary opacity-85 font-bold"
-                      key={index}
-                      style={{
-                        fontSize: `${CarouselTextFontSizeCalculator(
-                          slide.text
-                        )}px`,
-                        textAlign: `${
-                          slide.text.join("") == "GARBANZOS"
-                            ? "center"
-                            : "start"
-                        }`,
-                        marginLeft: `${
-                          slide.text.join("") == "GARBANZOS" ? "0" : "32px"
-                        }`,
-                      }}
-                    >
-                      {sil}
-                    </p>
-                  )
-                )
-              )}
+              {slide.text.map((sil, index) => (
+                <p
+                  className="text-secondary opacity-85 font-bold"
+                  key={index}
+                  style={{
+                    fontSize: `${CarouselTextFontSizeCalculator(slide.text)}px`,
+                    textAlign: `${
+                      slide.text.join("") == "GARBANZOS" ? "center" : "start"
+                    }`,
+                    marginLeft: `${
+                      slide.text.join("") == "GARBANZOS" ? "0" : "32px"
+                    }`,
+                  }}
+                >
+                  {sil}
+                </p>
+              ))}
             </div>
           </section>
         </SwiperSlide>
