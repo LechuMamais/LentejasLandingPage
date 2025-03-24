@@ -2,8 +2,8 @@ import { FaStar } from "react-icons/fa6";
 
 function OpinionCard({ opinion }) {
   return (
-    <div className="flex flex-col bg-bgCustomGreen p-[48px] rounded-[16px] border-none shadow-[0px_0px_24px_0px_rgba(0,0,0,0.5)] w-[320px] h-[480px] text-center items-center">
-      <div className="flex flex-col gap-[16px]">
+    <div className="flex flex-col bg-bgCustomGreen p-[48px] m-6 rounded-[16px] border-none shadow-[0px_0px_24px_0px_rgba(0,0,0,0.5)] w-[280px] h-[420px] text-center items-center">
+      <div className="flex flex-col gap-[16px] items-center">
         <img
           className="rounded-full w-[120px] h-[120px] object-cover shadow-[0px_0px_12px_0px_rgba(0,0,0,0.5)]"
           src={opinion.image.url}
@@ -23,7 +23,7 @@ function OpinionCard({ opinion }) {
             ))}
         </div>
       </div>
-      <p className="text-primary line-clamp-5 w-[200px] pt-[32px] text-[18px]">
+      <p className="text-primary line-clamp-5 w-[200px] pt-[32px] text-[18px] font-Inter">
         {opinion.comment}
       </p>
     </div>

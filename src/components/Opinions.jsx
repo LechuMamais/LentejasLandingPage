@@ -1,29 +1,61 @@
-import opinions from "../data/opinions";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/autoplay";
 import OpinionCard from "./OpinionCard";
+import opinions from "../data/opinions";
 
 function Opinions() {
   return (
     <section
       id="opinions"
-      className="flex flex-col bg-[url('/images/Opinions_background.png')] h-[1900px] px-[120px] pt-[180px]"
+      className="flex flex-col items-center justify-center bg-[url('/images/Opinions_background.png')] bg-cover bg-center min-h-screen pt-[100px] md:pt-[180px] pb-20"
     >
-      <div className="flex flex-col h-[50%] gap-[160px]">
-        <h2 className="text-[36px] font-semibold text-primary text-start">
-          Expertos nos recomiendan
-        </h2>
-
-        <div className="flex flex-row justify-center gap-[120px]">
-          {opinions?.length > 0 &&
-            opinions.map((opinion, index) => (
-              <OpinionCard key={index} opinion={opinion} />
-            ))}
+      <div className="w-full max-w-[1800px]">
+        <div className="flex flex-col items-center w-full">
+          <h2 className="text-3xl md:text-[36px] font-semibold text-primary text-center mb-12 md:mb-24 py-6 w-full">
+            Expertos nos recomiendan
+          </h2>
+          <div className="w-full flex justify-center">
+            <Swiper
+              modules={[Autoplay]}
+              slidesPerView={1}
+              loop={true}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }}
+              breakpoints={{
+                640: {
+                  slidesPerView: 2,
+                },
+                /*768: {
+                  slidesPerView: 3,
+                  spaceBetween: 40,
+                },*/
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 40,
+                },
+              }}
+              className="!py-12 w-full max-w-[1600px] flex justify-evenly"
+            >
+              {opinions.map((opinion, index) => (
+                <SwiperSlide key={index}>
+                  <div className="flex justify-center">
+                    <OpinionCard opinion={opinion} />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+          <div className="flex items-center justify-center mt-20 md:mt-32 w-full">
+            <p className="text-3xl md:text-[48px] text-primary font-medium text-center">
+              ¡Buscanos en tu supermercado!
+            </p>
+          </div>
         </div>
-      </div>
-
-      <div className="flex items-center justify-center h-[50%]">
-        <p className="text-[48px] text-primary font-medium">
-          ¡Buscanos en tu supermercado!
-        </p>
       </div>
     </section>
   );

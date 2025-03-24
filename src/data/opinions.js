@@ -24,7 +24,7 @@ const opinions = [
             url: '/images/opinions/Gordon-Ramzay.webp',
             alt: 'Gordon Ramzay',
         },
-        comment: 'Qué sería de mi invierno sin estas lentejas! El secreto de mis recetass'
+        comment: 'Qué sería de mi invierno sin estas lentejas! El secreto de mis recetas'
     },
     {
         name: 'Juan Mari Arzak',
