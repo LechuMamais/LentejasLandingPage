@@ -10,7 +10,7 @@ function ProductsSection() {
     >
       <h2 className="text-primary text-[48px]">Nuestros Productos</h2>
 
-      <div className="flex gap-[48px]">
+      <div className="flex gap-12">
         {products.map((product, index) => (
           <ProductCard key={index} product={product} />
         ))}
