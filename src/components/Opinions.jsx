@@ -39,7 +39,7 @@ function Opinions() {
                   spaceBetween: 40,
                 },
               }}
-              className="!py-12 w-full max-w-[1600px] flex justify-evenly"
+              className="!py-18 w-full max-w-[1600px] flex justify-evenly"
             >
               {opinions.map((opinion, index) => (
                 <SwiperSlide key={index}>
@@ -50,7 +50,7 @@ function Opinions() {
               ))}
             </Swiper>
           </div>
-          <div className="flex items-center justify-center mt-20 md:mt-32 w-full">
+          <div className="flex items-center justify-center mt-20 md:mt-32 w-full py-12 lg:py-24">
             <p className="text-3xl md:text-[48px] text-primary font-medium text-center">
               ¡Buscanos en tu supermercado!
             </p>
