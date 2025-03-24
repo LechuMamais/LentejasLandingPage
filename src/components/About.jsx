@@ -2,13 +2,18 @@ function About() {
   return (
     <section
       id="about"
-      className="grid grid-cols-1 md:grid-cols-2 auto-rows-[400px] md:auto-rows-[minmax(750px,_1fr)] h-auto"
+      className="grid grid-cols-1 lg:grid-cols-2 auto-rows-[400px] lg:auto-rows-[minmax(750px,_1fr)] h-auto"
     >
-      <div className="p-[48px] flex flex-col justify-center gap-4 md:gap-8 bg-bgCustomGreen order-1 md:order-1">
+      <div className="p-[48px] flex flex-col justify-center gap-4 lg:gap-8 bg-bgCustomGreen order-1 lg:order-1">
         <div className="font-bold">
           <p className="text-[11px] md:text-[20px]">SOMOS</p>
-          <p className="text-[40px] md:text-[102px] leading-none">
+          <p className="text-[40px] md:text-[68px] leading-none lg:hidden xl:block 2xl:text-[92px]">
             SOSTENIBLES
+          </p>
+          <p className="text-[68px] leading-none hidden lg:block xl:hidden">
+            SOSTE
+            <br />
+            NIBLES
           </p>
         </div>
         <p className="text-[13px] md:text-[18px] font-Inter font-normal tracking-wide">
@@ -19,7 +24,7 @@ function About() {
         </p>
       </div>
 
-      <div className="overflow-hidden w-full h-full order-2 md:order-2">
+      <div className="overflow-hidden w-full h-full order-2 lg:order-2">
         <img
           src="/images/campolentejas.jpg"
           alt="Campo de lentejas"
@@ -27,7 +32,7 @@ function About() {
         />
       </div>
 
-      <div className="overflow-hidden w-full h-full order-4 md:order-3">
+      <div className="overflow-hidden w-full h-full order-4 lg:order-3">
         <img
           src="/images/lentejas1.jpg"
           alt="Lentejas"
@@ -35,10 +40,12 @@ function About() {
         />
       </div>
 
-      <div className="p-[48px] flex flex-col justify-center gap-4 md:gap-8 bg-bgCustomGreen order-3 md:order-4">
+      <div className="p-[48px] flex flex-col justify-center gap-4 lg:gap-8 bg-bgCustomGreen order-3 lg:order-4">
         <div className="font-bold">
           <p className="text-[11px] md:text-[20px]">SOMOS</p>
-          <p className="text-[40px] md:text-[102px] leading-none">CALIDAD</p>
+          <p className="text-[40px]  md:text-[68px] 2xl:text-[92px] leading-none">
+            CALIDAD
+          </p>
         </div>
         <div className="text-[13px] md:text-[18px] font-Inter font-normal tracking-wide">
           <p>Nos obsesionan los detalles.</p>
@@ -50,8 +57,8 @@ function About() {
         </div>
       </div>
 
-      <div className="col-span-1 md:col-span-2 p-[48px] md:p-[200px] flex flex-col justify-center gap-4 md:gap-8 order-5 md:order-5">
-        <p className="text-[40px] md:text-[102px] leading-none font-bold">
+      <div className="col-span-1 lg:col-span-2 p-[48px] lg:p-[200px] flex flex-col justify-center gap-4 lg:gap-8 order-5 lg:order-5">
+        <p className="text-[40px]  md:text-[68px] lg:text-[92px] 2lg:text-[102px] leading-none font-bold">
           SOMOS
         </p>
         <div className="text-[13px] md:text-[18px] font-Inter font-normal tracking-wide">
