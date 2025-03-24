@@ -34,9 +34,9 @@ function ProductsSection() {
   return (
     <section
       id="products"
-      className="flex flex-col justify-evenly w-[100svw] h-[100svh] bg-bgCustomGreen  md:px-[120px]"
+      className="flex flex-col w-[100svw] bg-bgCustomGreen md:px-[120px]"
     >
-      <h2 className="text-primary pl-8 text-[32px] md:text-[48px]">
+      <h2 className="text-primary pl-8 py-8 text-[32px] md:text-[48px]">
         Nuestros Productos
       </h2>
 
@@ -49,10 +49,10 @@ function ProductsSection() {
         ))}
       </div>
 
-      <div className="flex flex-row-reverse pb-18">
+      <div className="flex flex-row-reverse">
         <button
           onClick={handleArrowClick}
-          className="pr-6 text-[80px] md:text-[120px] cursor-pointer transition-all duration-200 hover:pr-2 focus:outline-none"
+          className="pr-6 text-[80px] md:text-[120px] md:pb-8 cursor-pointer transition-all duration-200 hover:pr-2 focus:outline-none"
           aria-label="Desplazar productos a la derecha"
         >
           <BsArrowRight className="fill-[#D9D9D9] hover:fill-bgButton_hover transition-colors duration-300" />
