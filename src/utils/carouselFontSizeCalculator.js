@@ -1,14 +1,18 @@
 import { getViewPortHeight, getViewPortWidth } from "./viewportWidthHeight";
 
-export const CarouselTextFontSizeCalculator = (text, corrector = 1.3) => {
+export const CarouselTextFontSizeCalculator = (text, windowSize = {
+    windowWidth: getViewPortWidth(),
+    windowHeight: getViewPortHeight(),
+}, corrector = 1.3
+) => {
     const breakValue = 5.5;
 
     let fontValue =
-        (getViewPortWidth() / Math.max(text.length)) * corrector;
+        (windowSize.windowWidth / Math.max(...text.map((t) => t.length))) * corrector;
 
-    let cociente = getViewPortHeight() / fontValue;
+    let cociente = windowSize.windowHeight / fontValue;
 
     return cociente < breakValue * corrector
-        ? CarouselTextFontSizeCalculator(text, corrector - 0.1)
+        ? CarouselTextFontSizeCalculator(text, windowSize, corrector - 0.1)
         : fontValue;
 };

@@ -1,11 +1,33 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import { getViewPortWidth } from "../utils/viewportWidthHeight";
+import {
+  getViewPortHeight,
+  getViewPortWidth,
+} from "../utils/viewportWidthHeight";
 import { CarouselTextFontSizeCalculator } from "../utils/carouselFontSizeCalculator";
 import { slides } from "../data/carouselSlides";
+import { useEffect, useState } from "react";
 
 function Carousel() {
+  const [windowSize, setWindowSize] = useState({
+    windowWidth: getViewPortWidth(),
+    windowHeight: getViewPortHeight(),
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        windowWidth: getViewPortWidth(),
+        windowHeight: getViewPortHeight(),
+      }); // esto forzará el re-render
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <Swiper
       id="home"
@@ -31,7 +53,7 @@ function Carousel() {
               className="text-secondary opacity-85 font-bold hidden lg:block"
               style={{
                 fontSize: `${
-                  (getViewPortWidth() / slide.text.join("").length) * 1.3
+                  (windowSize.windowWidth / slide.text.join("").length) * 1.3
                 }px`,
               }}
             >
@@ -44,7 +66,10 @@ function Carousel() {
                   className="text-secondary opacity-85 font-bold"
                   key={index}
                   style={{
-                    fontSize: `${CarouselTextFontSizeCalculator(slide.text)}px`,
+                    fontSize: `${CarouselTextFontSizeCalculator(
+                      slide.text,
+                      windowSize
+                    )}px`,
                     textAlign: `${
                       slide.text.join("") == "GARBANZOS" ? "center" : "start"
                     }`,
