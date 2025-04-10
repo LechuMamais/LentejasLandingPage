@@ -56,7 +56,7 @@ function ProductsSection() {
   return (
     <section
       id="products"
-      className="flex flex-col w-[100svw] bg-bgCustomGreen"
+      className="flex flex-col w-[100svw] bg-bgCustomGreen overflow-hidden pt-[60px]"
     >
       <h2 className="text-primary pl-8 py-8 text-[32px] md:text-[48px]">
         Nuestros Productos
