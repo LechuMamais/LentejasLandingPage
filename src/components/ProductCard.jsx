@@ -1,6 +1,16 @@
+import { motion } from "framer-motion";
+
 function ProductCard({ product }) {
   return (
-    <div className="w-[300px] md:w-[300px] border border-gray-200 rounded-[16px] overflow-hidden shrink-0 shadow-md bg-bgCustom transition-transform duration-150 ease-in-out hover:shadow-lg hover:transform hover:scale-102">
+    <motion.div
+      className="w-[300px] md:w-[300px] border border-gray-200 rounded-[16px] overflow-hidden shrink-0 bg-bgCustom"
+      style={{ boxShadow: "var(--shadow-default)" }}
+      whileHover={{
+        scale: 1.015,
+        boxShadow: "var(--shadow-hover)",
+        transition: { duration: 0.15 },
+      }}
+    >
       <img
         src={product.image.url}
         alt={product.image.alt}
@@ -12,7 +22,7 @@ function ProductCard({ product }) {
 
         <p className="text-sm text-primary font-Inter">{product.description}</p>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
