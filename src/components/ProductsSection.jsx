@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import products from "../data/products";
 import ProductCard from "./ProductCard";
-import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import ArrowButtons from "./ArrowButtons";
 
 function ProductsSection() {
   useEffect(() => {
@@ -72,20 +72,7 @@ function ProductsSection() {
       </div>
 
       <div className="flex justify-end px-4 pb-12 pt-6">
-        <button
-          onClick={() => handleArrowClick("left")}
-          className="text-[30px] lg:text-[60px] cursor-pointer p-2 transition-all duration-300 hover:translate-x-[-8px] focus:outline-none"
-          aria-label="Desplazar productos a la izquierda"
-        >
-          <BsArrowLeft className="fill-[#D9D9D9] hover:fill-bgButton_hover transition-colors duration-300 delay-[100ms]" />
-        </button>
-        <button
-          onClick={() => handleArrowClick("right")}
-          className="text-[30px] lg:text-[60px] cursor-pointer p-3 transition-all duration-300 hover:translate-x-[8px] focus:outline-none"
-          aria-label="Desplazar productos a la derecha"
-        >
-          <BsArrowRight className="fill-[#D9D9D9] hover:fill-bgButton_hover transition-colors duration-300 delay-[100ms]" />
-        </button>
+        <ArrowButtons handleArrowClick={handleArrowClick} />
       </div>
     </section>
   );
