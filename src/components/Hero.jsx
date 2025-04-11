@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { handleScroll } from "../utils/handleScroll";
 
 function Hero() {
@@ -9,12 +10,17 @@ function Hero() {
       <p className=" text-center text-primary max-w-[1000px] text-[18px] md:text-[36px]">
         Descubre el sabor y la calidad de las mejores legumbres
       </p>
-      <button
-        className="cursor-pointer mt-[144px] border-none rounded-[8px] bg-bgButton px-[32px] py-[16px] text-primary transition-all duration-200 hover:bg-bgButton_hover"
+      <motion.button
+        className="cursor-pointer mt-[144px] border-none rounded-[8px] bg-bgButton px-[32px] py-[16px] text-primary"
+        whileHover={{
+          backgroundColor: "var(--color-bgButton_hover)",
+          transition: { duration: 0.2 },
+        }}
+        whileTap={{ scale: 0.95 }}
         onClick={() => handleScroll("products")}
       >
         Nuestros Productos
-      </button>
+      </motion.button>
     </section>
   );
 }
