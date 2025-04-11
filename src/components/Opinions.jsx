@@ -9,7 +9,7 @@ function Opinions() {
   return (
     <section
       id="opinions"
-      className="flex flex-col items-center justify-center bg-[url('/images/Opinions_background.png')] bg-cover bg-center min-h-screen pt-[100px] md:pt-[180px] pb-20 px-6"
+      className="flex flex-col items-center justify-center bg-[url('/images/Opinions_background.png')] bg-cover bg-center min-h-screen pt-[100px] md:pt-[180px] pb-20 px-6 rounded-[0% 0% 50% 50%] "
     >
       <div className="w-full max-w-[1800px]">
         <div className="flex flex-col items-center w-full">
