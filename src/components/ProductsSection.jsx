@@ -8,21 +8,16 @@ function ProductsSection() {
     const wrapper = document.getElementById("products-card-wrapper");
     if (wrapper) {
       const handleWheel = (e) => {
-        // Verificar si estamos en un extremo
         const isAtStart = wrapper.scrollLeft === 0;
         const isAtEnd =
-          wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth - 1; // -1 por redondeo de píxeles
-        // Determinar la dirección del scroll
+          wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth - 1;
         const isScrollingDown = e.deltaY > 0;
         const isScrollingUp = e.deltaY < 0;
 
-        // Si estamos en el inicio y scrolleando hacia arriba,
-        // o en el final y scrolleando hacia abajo, permitir el scroll normal
         if ((isAtStart && isScrollingUp) || (isAtEnd && isScrollingDown)) {
-          return; // No hacer nada, permitir scroll normal de la página
+          return;
         }
 
-        // En cualquier otro caso, prevenir el scroll de la página y mover el carrusel
         e.preventDefault();
         wrapper.scrollTo({
           left: wrapper.scrollLeft + (e.deltaY > 0 ? 332 : -332),
@@ -39,18 +34,14 @@ function ProductsSection() {
     const productsCardWrapper = document.getElementById(
       "products-card-wrapper"
     );
-    if (side === "left") {
-      productsCardWrapper.scrollTo({
-        left: productsCardWrapper.scrollLeft - 332,
-        behavior: "smooth",
-      });
-    }
-    if (side === "right") {
-      productsCardWrapper.scrollTo({
-        left: productsCardWrapper.scrollLeft + 332,
-        behavior: "smooth",
-      });
-    }
+
+    productsCardWrapper.scrollTo({
+      left:
+        side === "left"
+          ? productsCardWrapper.scrollLeft - 332
+          : productsCardWrapper.scrollLeft + 332,
+      behavior: "smooth",
+    });
   };
 
   return (

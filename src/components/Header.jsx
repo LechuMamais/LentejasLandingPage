@@ -94,7 +94,6 @@ function Header() {
               className="cursor-pointer relative"
               onClick={() => handleScroll(section._id)}
               whileHover={{
-                scale: 1.01,
                 textShadow: "0 1px 5px rgba(0,0,0,0.61)",
                 transition: { duration: 0.3 },
               }}
