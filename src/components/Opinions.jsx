@@ -50,7 +50,7 @@ function Opinions() {
               ))}
             </Swiper>
           </div>
-          <div className="flex items-center justify-center mt-20 md:mt-32 w-full py-12 lg:py-24">
+          <div className="flex items-center justify-center mt-20 md:mt-32 w-full py-12 lg:py-32">
             <p className="text-3xl md:text-[48px] text-primary font-medium text-center">
               ¡Buscanos en tu supermercado!
             </p>
