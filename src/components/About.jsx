@@ -2,7 +2,7 @@ function About() {
   return (
     <section
       id="about"
-      className="grid grid-cols-1 lg:grid-cols-2 auto-rows-[400px] lg:auto-rows-[minmax(750px,_1fr)] h-auto"
+      className="grid grid-cols-1 lg:grid-cols-2 auto-rows-[400px] lg:auto-rows-[minmax(750px,_1fr)] h-auto bg-bgCustom"
     >
       <div className="p-[48px] flex flex-col justify-center gap-4 lg:gap-8 bg-bgCustomGreen order-1 lg:order-1">
         <div className="font-bold">

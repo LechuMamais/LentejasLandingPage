@@ -3,7 +3,7 @@ import { handleScroll } from "../utils/handleScroll";
 
 function Hero() {
   return (
-    <section className="flex flex-col justify-center items-center gap-8 w-[100svw] h-[100svh] px-8 bg-[url('/images/citric_bg.jpg')] bg-repeat-x bg-bottom">
+    <section className="flex flex-col justify-center items-center gap-8 w-[100svw] h-[100svh] px-8 bg-[url('/images/citric_bg.jpg')] bg-repeat-x bg-bottom bg-bgCustom">
       <h1 className=" text-primary font-semibold text-center  text-[48px] md:text-[96px]">
         EAT HEALTHY
       </h1>
