@@ -14,10 +14,6 @@ function ProductsSection() {
         const isScrollingDown = e.deltaY > 0;
         const isScrollingUp = e.deltaY < 0;
 
-        console.log(wrapper.scrollLeft)
-        console.log(wrapper.clientWidth)
-        console.log(wrapper.scrollWidth - 1)
-
         if ((isAtStart && isScrollingUp) || (isAtEnd && isScrollingDown)) {
           return;
         }
