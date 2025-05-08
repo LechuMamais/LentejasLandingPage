@@ -16,7 +16,7 @@ function Footer() {
           <p className="text-secondary text-[20px] text-center">
             ONLINE COMMUNITY
           </p>
-          <div className="flex gap-16">
+          <div className="flex gap-8">
             <SocialIcon
               icon={InstagramIcon}
               href="https://instagram.com"

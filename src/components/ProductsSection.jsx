@@ -1,28 +1,23 @@
 import { useEffect } from "react";
 import products from "../data/products";
 import ProductCard from "./ProductCard";
-import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import ArrowButtons from "./ArrowButtons";
 
 function ProductsSection() {
   useEffect(() => {
     const wrapper = document.getElementById("products-card-wrapper");
     if (wrapper) {
       const handleWheel = (e) => {
-        // Verificar si estamos en un extremo
         const isAtStart = wrapper.scrollLeft === 0;
         const isAtEnd =
-          wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth - 1; // -1 por redondeo de píxeles
-        // Determinar la dirección del scroll
+          wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth - 1;
         const isScrollingDown = e.deltaY > 0;
         const isScrollingUp = e.deltaY < 0;
 
-        // Si estamos en el inicio y scrolleando hacia arriba,
-        // o en el final y scrolleando hacia abajo, permitir el scroll normal
         if ((isAtStart && isScrollingUp) || (isAtEnd && isScrollingDown)) {
-          return; // No hacer nada, permitir scroll normal de la página
+          return;
         }
 
-        // En cualquier otro caso, prevenir el scroll de la página y mover el carrusel
         e.preventDefault();
         wrapper.scrollTo({
           left: wrapper.scrollLeft + (e.deltaY > 0 ? 332 : -332),
@@ -39,18 +34,14 @@ function ProductsSection() {
     const productsCardWrapper = document.getElementById(
       "products-card-wrapper"
     );
-    if (side === "left") {
-      productsCardWrapper.scrollTo({
-        left: productsCardWrapper.scrollLeft - 332,
-        behavior: "smooth",
-      });
-    }
-    if (side === "right") {
-      productsCardWrapper.scrollTo({
-        left: productsCardWrapper.scrollLeft + 332,
-        behavior: "smooth",
-      });
-    }
+
+    productsCardWrapper.scrollTo({
+      left:
+        side === "left"
+          ? productsCardWrapper.scrollLeft - 332
+          : productsCardWrapper.scrollLeft + 332,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -72,20 +63,7 @@ function ProductsSection() {
       </div>
 
       <div className="flex justify-end px-4 pb-12 pt-6">
-        <button
-          onClick={() => handleArrowClick("left")}
-          className="text-[30px] lg:text-[60px] cursor-pointer p-2 transition-all duration-300 hover:translate-x-[-8px] focus:outline-none"
-          aria-label="Desplazar productos a la izquierda"
-        >
-          <BsArrowLeft className="fill-[#D9D9D9] hover:fill-bgButton_hover transition-colors duration-300 delay-[100ms]" />
-        </button>
-        <button
-          onClick={() => handleArrowClick("right")}
-          className="text-[30px] lg:text-[60px] cursor-pointer p-3 transition-all duration-300 hover:translate-x-[8px] focus:outline-none"
-          aria-label="Desplazar productos a la derecha"
-        >
-          <BsArrowRight className="fill-[#D9D9D9] hover:fill-bgButton_hover transition-colors duration-300 delay-[100ms]" />
-        </button>
+        <ArrowButtons handleArrowClick={handleArrowClick} />
       </div>
     </section>
   );
