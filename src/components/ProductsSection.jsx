@@ -14,13 +14,17 @@ function ProductsSection() {
         const isScrollingDown = e.deltaY > 0;
         const isScrollingUp = e.deltaY < 0;
 
+        console.log(wrapper.scrollLeft)
+        console.log(wrapper.clientWidth)
+        console.log(wrapper.scrollWidth - 1)
+
         if ((isAtStart && isScrollingUp) || (isAtEnd && isScrollingDown)) {
           return;
         }
 
         e.preventDefault();
         wrapper.scrollTo({
-          left: wrapper.scrollLeft + (e.deltaY > 0 ? 332 : -332),
+          left: wrapper.scrollLeft + (isScrollingDown ? 332 : -332),
           behavior: "smooth",
         });
       };
@@ -55,7 +59,7 @@ function ProductsSection() {
 
       <div
         id="products-card-wrapper"
-        className="flex gap-8 overflow-x-auto pt-4 pb-8 snap-x snap-mandatory pr-8 md:pr-12 pl-8 max-w-[1060px] !m-auto"
+        className="flex gap-8 overflow-x-auto pt-4 pb-8 snap-x snap-mandatory pr-8 md:pr-12 pl-8 max-w-[1060px] w-full !m-auto"
       >
         {products.map((product, index) => (
           <ProductCard key={index} product={product} />

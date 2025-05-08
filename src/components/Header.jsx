@@ -87,7 +87,7 @@ function Header() {
           whileTap={{ scale: 0.95 }}
         />
 
-        <div className="gap-16 xl:gap-24 2xl:gap-32 hidden md:flex opacity- text-[14px] xl:text-[16px] 2xl:text-[18px] tracking-wider">
+        <nav className="gap-16 xl:gap-24 2xl:gap-32 hidden md:flex opacity- text-[14px] xl:text-[16px] 2xl:text-[18px] tracking-wider">
           {headerSections.map((section) => (
             <motion.span
               key={section._id}
@@ -102,7 +102,7 @@ function Header() {
               {section.headerText}
             </motion.span>
           ))}
-        </div>
+        </nav>
 
         <motion.button
           onClick={() => {
